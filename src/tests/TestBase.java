@@ -7,7 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+
+import java.util.Random;
 
 /**
  * Created by Inka on 16-Dec-18.
@@ -21,7 +22,8 @@ public class TestBase {
     }
 
     @AfterSuite
-    public void tearDown(){
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(5000);
         driver.quit();
     }
 
@@ -36,4 +38,5 @@ public class TestBase {
             e.printStackTrace();
         }
     }
+
 }
